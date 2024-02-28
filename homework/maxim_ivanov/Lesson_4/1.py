@@ -10,4 +10,3 @@ del my_dict['dict']['key5']
 my_dict['set'].add(333)
 my_dict['set'].pop()
 print(my_dict)
-
