@@ -5,7 +5,7 @@ my_dict = {'tuple': (4, 5, 'seven', '10', True), 'list': [True, False, 100, 'nul
 print(my_dict['tuple'][-1])
 my_dict['list'].append('add')
 my_dict['list'].pop(1)
-my_dict['dict']["'i am a tuple,'"] = 'tuple'
+my_dict['dict'][('i am a tuple',)] = 'tuple'
 del my_dict['dict']['key5']
 my_dict['set'].add(333)
 my_dict['set'].pop()
