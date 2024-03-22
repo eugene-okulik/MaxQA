@@ -1,0 +1,25 @@
+insert into `groups` (title, start_date, end_date) values ('MFT-1','15.03.2024', '15.03.2026');
+insert into `students` (name, second_name, group_id) values ('Max','Ivanov', 835);
+insert into `books` (title, taken_by_student_id) values ('Жизнь людей', 835 );
+insert into `books` (title, taken_by_student_id) values ('Выживание', 835 );
+insert into subjets  (title) values ('Биопрограммирование');
+insert into subjets  (title) values ('Биоинформирование');
+insert into lessons  (title, subject_id) values ('Биопрограммирование основы', 1057);
+insert into lessons  (title, subject_id) values ('Биопрограммирование продолжение', 1057);
+insert into lessons  (title, subject_id) values ('Биоинформирование основы', 1058);
+insert into lessons  (title, subject_id) values ('Биоинформирование продолжение', 1058);
+insert into marks  (value , lesson_id, student_id) values ('10', 2864, 835);
+insert into marks  (value , lesson_id, student_id) values ('8', 2865, 835);
+insert into marks  (value , lesson_id, student_id) values ('6', 2866, 835);
+insert into marks  (value , lesson_id, student_id) values (835);
+--
+SELECT m.value  from marks m join students s on m.student_id = s.id
+WHERE s.id = 835;
+
+SELECT * from books b join students s on b.taken_by_student_id = s.id
+WHERE s.id = 835;
+
+SELECT * from students s
+join marks m on s.id = m.student_id
+join books b on s.id = b.taken_by_student_id
+WHERE  s.id = 835;
