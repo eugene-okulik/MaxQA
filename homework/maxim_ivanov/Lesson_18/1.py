@@ -35,7 +35,7 @@ def put_object():
 
     headers = {"content-type": "application/json"}
 
-    r = requests.put(f'{BASE_URL}/{id_object}', json=payload, headers=headers)
+    requests.put(f'{BASE_URL}/{id_object}', json=payload, headers=headers)
 
 
 def patch_object():
@@ -51,10 +51,7 @@ def patch_object():
 
     headers = {"content-type": "application/json"}
 
-    r = requests.patch(f'{BASE_URL}/{id_object}', json=payload, headers=headers)
-    print(r.json())
-
-    return r.json()['id']
+    requests.patch(f'{BASE_URL}/{id_object}', json=payload, headers=headers)
 
 
 def delete_object():
@@ -62,7 +59,7 @@ def delete_object():
 
     headers = {"content-type": "application/json"}
 
-    r = requests.delete(f'{BASE_URL}/{id_object}', headers=headers)
+    requests.delete(f'{BASE_URL}/{id_object}', headers=headers)
 
 
 delete_object()
