@@ -28,5 +28,3 @@ class JSONPlaceholder(HttpUser):
     @task(1)
     def add_post(self):
         self.client.post("/posts", json=self.random_payload())
-
-
