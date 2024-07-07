@@ -4,7 +4,8 @@ from playwright.sync_api import expect, Page, Request, Route
 
 def test_modify_and_check_title(page: Page):
     def handle_request(route: Route, request: Request):
-        if 'https://www.apple.com/shop/api/digital-mat?path=library/step0_iphone/digitalmat' in request.url:
+        test_url = 'https://www.apple.com/shop/api/digital-mat?path=library/step0_iphone/digitalmat'
+        if test_url in request.url:
             response = route.fetch()
             body = response.json()
             print('body', body['body'])
